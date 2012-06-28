@@ -56,7 +56,7 @@ public class QueryProcessorTest {
     public void canTestFibbonacci() {
         String result = new QueryProcessor().process("e602ab40: what is the 6th number in the Fibonacci sequence");
         assertNotNull(result);
-        assertThat(result, is("5"));
+        assertThat(result, is("8"));
     }
 
     @Test
