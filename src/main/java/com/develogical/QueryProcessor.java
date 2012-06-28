@@ -22,6 +22,11 @@ public class QueryProcessor {
             System.out.println("response = " + response);
             return response;
         }
+        else if (query.contains("which of the following numbers are primes")) {
+            String response = "" + primes(query);
+            System.out.println("response = " + response);
+            return response;
+        }
         return "";
     }
 
@@ -66,6 +71,44 @@ public class QueryProcessor {
 
 
     }
+
+
+    String primes (String s)
+    {
+        String primes = "";
+
+        String [] s1 = s.split(":") ;
+        String s2 = s1[2];
+        String [] s3 = s2.split(",");
+
+        for (String s4 : s3) {
+            if (isPrime(Integer.parseInt(s4.trim()))) {
+                if (!"".equals(primes))
+                {
+                    primes += ", ";
+                }
+                primes += s4.trim();
+            }
+
+        }
+
+        return primes;
+
+
+    }
+
+    boolean isPrime(int n) {
+        //check if n is a multiple of 2
+        if (n%2==0) return false;
+        //if not, then just check the odds
+        for(int i=3;i*i<=n;i+=2) {
+            if(n%i==0)
+                return false;
+        }
+        return true;
+    }
+
+
 
 
 

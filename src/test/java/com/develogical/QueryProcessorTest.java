@@ -47,10 +47,21 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void canTestPrimes() {
+        String result = new QueryProcessor().process("df696090: which of the following numbers are primes: 3, 7, 6, 5");
+        assertNotNull(result);
+        assertThat(result, is("3, 7, 5"));
+    }
+
+    @Test
     public void returnsEmptyStringForUnknownQueries() {
         String result = new QueryProcessor().process("unknown");
         assertNotNull(result);
         assertThat(result, is(""));
+
+        java.lang.Math.sqrt(0);
+        java.lang.Math.cbrt(0);
+
     }
 }
 
