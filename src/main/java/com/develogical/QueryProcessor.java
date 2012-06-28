@@ -3,6 +3,9 @@ package com.develogical;
 public class QueryProcessor {
 
     public String process(String query) {
+
+        System.out.println("query = " + query);
+
         if (query.contains("hi")) {
             return "hello";
         }
