@@ -36,6 +36,14 @@ public class QueryProcessor {
 
             return i1 + i2;
         }
+        else if ("multiplied".equals(ss[4])) {
+
+            int i1 = Integer.parseInt(ss[3]);
+            int i2 = Integer.parseInt(ss[6]);
+
+            return i1 * i2;
+        }
+
 
         return 0;
     }

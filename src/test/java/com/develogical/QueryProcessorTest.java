@@ -33,6 +33,13 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void canTestMultiply() {
+        String result = new QueryProcessor().process("d8ea3280: what is 16 multiplied by 10");
+        assertNotNull(result);
+        assertThat(result, is("160"));
+    }
+
+    @Test
     public void canTestLargest() {
         String result = new QueryProcessor().process("ac197f80: which of the following numbers is the largest: 434, 28, 872, 77");
         assertNotNull(result);
