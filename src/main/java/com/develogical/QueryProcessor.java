@@ -28,7 +28,7 @@ public class QueryProcessor {
             return response;
         }
         else if (query.contains("which of the following numbers is both a square and a cube")) {
-            String response = "" + squaresandcubes(query);
+            String response = "";
             System.out.println("response = " + response);
             return response;
         }
