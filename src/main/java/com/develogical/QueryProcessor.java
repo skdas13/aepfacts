@@ -12,13 +12,28 @@ public class QueryProcessor {
         else if (query.contains("what is your name")) {
             return "DeepBlue";
         }
-        else if (query.contains("what is 19 plus 10")) {
-            return "29";
+        else if (query.contains("what is")) {
+            return "" + parseString(query);
         }
         else if (query.contains("which of the following numbers is the largest: 20, 257, 35, 271")) {
             return "271";
         }
         return "";
+    }
+
+    int parseString (String s)
+    {
+        String [] ss = s.split(" ");
+
+        if ("plus".equals(ss[3])) {
+
+            int i1 = Integer.parseInt(ss[2]);
+            int i2 = Integer.parseInt(ss[4]);
+
+            return i1 + i2;
+        }
+
+        return 0;
     }
 
 }
