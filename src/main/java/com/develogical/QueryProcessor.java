@@ -1,5 +1,8 @@
 package com.develogical;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -46,6 +49,13 @@ public class QueryProcessor {
             int i2 = Integer.parseInt(ss[5]);
 
             return i1 + i2;
+        }
+        else if ("minus".equals(ss[4])) {
+
+            int i1 = Integer.parseInt(ss[3]);
+            int i2 = Integer.parseInt(ss[5]);
+
+            return i1 - i2;
         }
         else if ("multiplied".equals(ss[4])) {
 
@@ -156,6 +166,14 @@ public class QueryProcessor {
         return true;
     }
 
+    /*
+    private String lookup (String key) {
+
+        Map<Intge, String> answers = new HashMap<String, String> (50);
+        answers.put()
+
+    }
+        */
 
 
 

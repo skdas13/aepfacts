@@ -26,10 +26,17 @@ public class QueryProcessorTest {
     }
 
     @Test
-    public void canTestPlus() {
+         public void canTestPlus() {
         String result = new QueryProcessor().process("d8ea3280: what is 16 plus 10");
         assertNotNull(result);
         assertThat(result, is("26"));
+    }
+
+    @Test
+    public void canTestMinus() {
+        String result = new QueryProcessor().process("d8ea3280: what is 16 minus 10");
+        assertNotNull(result);
+        assertThat(result, is("6"));
     }
 
     @Test
@@ -48,6 +55,13 @@ public class QueryProcessorTest {
 
     @Test
     public void canTestPrimes() {
+        String result = new QueryProcessor().process("df696090: which of the following numbers are primes: 3, 7, 6, 5");
+        assertNotNull(result);
+        assertThat(result, is("3, 7, 5"));
+    }
+
+    @Test
+    public void canTestSqandCube() {
         String result = new QueryProcessor().process("df696090: which of the following numbers are primes: 3, 7, 6, 5");
         assertNotNull(result);
         assertThat(result, is("3, 7, 5"));
