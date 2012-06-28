@@ -25,6 +25,9 @@ public class QueryProcessorTest {
         assertThat(result, is("DeepBlue"));
     }
 
+
+
+
     @Test
     public void returnsEmptyStringForUnknownQueries() {
         String result = new QueryProcessor().process("unknown");
