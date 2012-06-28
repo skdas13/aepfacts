@@ -27,6 +27,12 @@ public class QueryProcessor {
             System.out.println("response = " + response);
             return response;
         }
+        else if (query.contains("which of the following numbers is both a square and a cube")) {
+            String response = "" + squaresandcubes(query);
+            System.out.println("response = " + response);
+            return response;
+        }
+
         return "";
     }
 
@@ -95,6 +101,48 @@ public class QueryProcessor {
         return primes;
 
 
+    }
+
+    String squaresandcubes (String s)
+    {
+        String sqcbs = "";
+
+        String [] s1 = s.split(":") ;
+        String s2 = s1[2];
+        String [] s3 = s2.split(",");
+
+        for (String s4 : s3) {
+            int n =  Integer.parseInt(s4.trim());
+
+            if (isSquare(n) && isCube(n)) {
+                if (!"".equals(sqcbs))
+                {
+                    sqcbs += ", ";
+                }
+                sqcbs += s4.trim();
+            }
+
+        }
+
+        return sqcbs;
+
+
+    }
+
+    boolean isSquare(int n)
+    {
+        if (Math.sqrt(n) == Math.abs(Math.sqrt(n)))
+            return true;
+        else
+            return false;
+    }
+
+    boolean isCube(int n)
+    {
+        if (Math.cbrt(n) == Math.abs(Math.cbrt(n)))
+            return true;
+        else
+            return false;
     }
 
     boolean isPrime(int n) {
