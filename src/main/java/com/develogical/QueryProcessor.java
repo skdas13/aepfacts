@@ -15,6 +15,11 @@ public class QueryProcessor {
         else if (query.contains("what is your name")) {
             return "DeepBlue";
         }
+        else if (query.contains("Fibonacci")) {
+            String response = "" + getfibonnaci(query);
+            System.out.println("response = " + response);
+            return response;
+        }
         else if (query.contains("what is")) {
             String response = "" + parseString(query);
             System.out.println("response = " + response);
@@ -36,8 +41,11 @@ public class QueryProcessor {
             return response;
         }
 
+
         return "";
     }
+
+
 
     int parseString (String s)
     {
@@ -166,17 +174,26 @@ public class QueryProcessor {
         return true;
     }
 
-    /*
-    private String lookup (String key) {
 
-        Map<Intge, String> answers = new HashMap<String, String> (50);
-        answers.put()
+    private long lookup (int index) {
+        int newindex = index -1;
+        long [] fibbonaccis = new long [] {0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811};
+        if (newindex > 0 && newindex < (fibbonaccis.length-1) ){
+            return fibbonaccis[newindex];
+        }
+
+        return 0;
+    }
+
+    long getfibonnaci (String s)
+    {
+        String [] ss = s.split(" ");
+        String [] ss2= ss[4].split("th");
+
+        System.out.println("ss2 = " + ss2[0]);
+
+        return lookup(Integer.parseInt(ss2[0]));
 
     }
-        */
-
-
-
-
 
 }

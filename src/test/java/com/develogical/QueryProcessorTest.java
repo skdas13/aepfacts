@@ -47,6 +47,13 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void canTestFibbonacci() {
+        String result = new QueryProcessor().process("e602ab40: what is the 6th number in the Fibonacci sequence");
+        assertNotNull(result);
+        assertThat(result, is("5"));
+    }
+
+    @Test
     public void canTestLargest() {
         String result = new QueryProcessor().process("ac197f80: which of the following numbers is the largest: 434, 28, 872, 77");
         assertNotNull(result);
