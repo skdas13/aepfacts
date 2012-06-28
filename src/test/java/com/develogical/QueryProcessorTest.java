@@ -32,6 +32,12 @@ public class QueryProcessorTest {
         assertThat(result, is("26"));
     }
 
+    @Test
+    public void canTestLargest() {
+        String result = new QueryProcessor().process("ac197f80: which of the following numbers is the largest: 434, 28, 872, 77");
+        assertNotNull(result);
+        assertThat(result, is("872"));
+    }
 
     @Test
     public void returnsEmptyStringForUnknownQueries() {
