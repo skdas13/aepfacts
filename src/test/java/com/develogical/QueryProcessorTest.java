@@ -19,6 +19,13 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void canGreetWhatIsYourName() {
+        String result = new QueryProcessor().process("what is your name");
+        assertNotNull(result);
+        assertThat(result, is("DeepBlue"));
+    }
+
+    @Test
     public void returnsEmptyStringForUnknownQueries() {
         String result = new QueryProcessor().process("unknown");
         assertNotNull(result);
