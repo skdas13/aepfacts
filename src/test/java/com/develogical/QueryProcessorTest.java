@@ -31,6 +31,12 @@ public class QueryProcessorTest {
         assertNotNull(result);
         assertThat(result, is("26"));
     }
+    @Test
+    public void canTestPlusPlus() {
+        String result = new QueryProcessor().process("d8ea3280: what is 16 plus 10 plus 10");
+        assertNotNull(result);
+        assertThat(result, is("36"));
+    }
 
     @Test
     public void canTestMinus() {

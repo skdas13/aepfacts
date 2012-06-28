@@ -56,6 +56,11 @@ public class QueryProcessor {
             int i1 = Integer.parseInt(ss[3]);
             int i2 = Integer.parseInt(ss[5]);
 
+            if (ss.length > 6 && "plus".equals(ss[6])) {
+                int i3 = Integer.parseInt(ss[7]);
+                return i1 + i2 + i3;
+            }
+
             return i1 + i2;
         }
         else if ("minus".equals(ss[4])) {
