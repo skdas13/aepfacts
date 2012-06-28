@@ -30,7 +30,7 @@ public class AepFactsDatabase {
         // student 11 add biog here
         // student 12 add biog here
         // student 13 add biog here
-        data.put("santosh",  miniBiog("Santosh is lazy.", "no profile"));
+        data.put("santosh",  miniBiog("Santosh is very very lazy.", "no profile"));
         // student 15 add biog here
         // student 16 add biog here
     }
