@@ -13,7 +13,9 @@ public class QueryProcessor {
             return "DeepBlue";
         }
         else if (query.contains("what is")) {
-            return "" + parseString(query);
+            String response = "" + parseString(query);
+            System.out.println("response = " + response);
+            return response;
         }
         else if (query.contains("which of the following numbers is the largest: 20, 257, 35, 271")) {
             return "271";
@@ -25,15 +27,16 @@ public class QueryProcessor {
     {
         String [] ss = s.split(" ");
 
-        if ("plus".equals(ss[3])) {
+        if ("plus".equals(ss[4])) {
 
-            int i1 = Integer.parseInt(ss[2]);
-            int i2 = Integer.parseInt(ss[4]);
+            int i1 = Integer.parseInt(ss[3]);
+            int i2 = Integer.parseInt(ss[5]);
 
             return i1 + i2;
         }
 
         return 0;
     }
+
 
 }

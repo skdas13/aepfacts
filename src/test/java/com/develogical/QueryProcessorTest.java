@@ -25,7 +25,12 @@ public class QueryProcessorTest {
         assertThat(result, is("DeepBlue"));
     }
 
-
+    @Test
+    public void canTestPlus() {
+        String result = new QueryProcessor().process("d8ea3280: what is 16 plus 10");
+        assertNotNull(result);
+        assertThat(result, is("26"));
+    }
 
 
     @Test
