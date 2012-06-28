@@ -15,7 +15,7 @@ public class QueryProcessorTest {
     public void canGreetYou() {
         String result = new QueryProcessor().process("hi");
         assertNotNull(result);
-        assertThat(result, is("hello there"));
+        assertThat(result, is("hello"));
     }
 
     @Test
